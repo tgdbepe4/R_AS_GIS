@@ -1,21 +1,31 @@
 ---
 title: "R_AS_GIS"
-author: "Peter Berger"
-date: "September 2019 2018"
+author: "Katharina Kaelin"
+date: "2019"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: '2'
   html_document:
-    df_print: paged
+    code_folding: show
+    df_print: kable
     toc: yes
-    toc_depth: '2'
+    toc_depth: 4
+    toc_float:
+      collapsed: no
+      smooth_scroll: no
   word_document:
     toc: yes
-    toc_depth: '2'
-subtitle: My analysis
+    toc_depth: '4'
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+  md_document: default
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Die Beispiel wurden vom Statistischen Amt des Kantons Zürich publiziert.
+
+Die Portierung auf die RStudio-Umgebung wurde durch Peter Berger realisiert. Die ganzem Bereitstellung und Dokumentationsteile wurden aus Arbeiten von Timo Grossenbacher von SF Data übrnommen und adapiert.
 
 ```{r, echo=FALSE}
 # CONFIG
@@ -24,7 +34,7 @@ user_name <- "tgdbepe4" # your Git username (only needed if
 project_name <- "R_AS_GIS" # adapt!
 package_date <- "2019-09-21" # date of the CRAN snapshot that
 # the checkpoint package uses
-R_version <- "3.6.0" # R-Version to use
+R_version <- "3.6.1" # R-Version to use
 options(Ncpus = 4) # use 4 cores for parallelized installation of packages
 if (R_version != paste0(version$major, ".", version$minor)){
   stop("ERROR: specified R version does not match currently used.")
