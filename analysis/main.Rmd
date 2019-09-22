@@ -4,11 +4,17 @@ author: "Katharina Kaelin"
 date: "2019"
 output:
   html_document:
+    code_folding: show
+    echo: TRUE
+    warning: FALSE
+    message: FALSE
+    theme: simplex
+    df_print: default
     toc: yes
     toc_depth: 4
-    toc_float:
-      collapsed: no
-      smooth_scroll: no
+    toc_float: 
+      collapsed: false
+      smooth_scroll: false
   word_document:
     toc: yes
     toc_depth: '4'
