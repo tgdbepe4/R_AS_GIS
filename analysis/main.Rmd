@@ -4,8 +4,6 @@ author: "Katharina Kaelin"
 date: "2019"
 output:
   html_document:
-    code_folding: show
-    df_print: kable
     toc: yes
     toc_depth: 4
     toc_float:
@@ -258,12 +256,11 @@ pts_sf[1:5,]
 ## 5 8501442      6057 POINT (2650331 1141959)
 ```
 
-##Municipality
+## Municipality
 The municipality dataset was downloded here:
 https://shop.swisstopo.admin.ch/de/products/landscape/boundaries3D
 Release date: 2019
 Format: Shapefile
-
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 # Import shp as spatial df
 mun_sf <- sf::st_read("./Data_in/swissBOUNDARIES3D_1_3_TLM_HOHEITSGEBIET.shp", stringsAsFactors = FALSE, crs=2056)
@@ -287,6 +284,7 @@ mun_sf <- mun_sf %>%
 # Check data
 class(mun_sf)
 ## [1] "sf"         "tbl_df"     "tbl"        "data.frame"
+
 mun_sf[1:5,]
 ## Simple feature collection with 5 features and 2 fields
 ## geometry type:  POLYGON
@@ -383,7 +381,7 @@ tmap::tm_shape(mun_sf) +
           colorNA = "blue")  +
   tmap::tm_layout(frame = FALSE)
 ```
-##Calculate density of public transportation stops per canton
+## Calculate density of public transportation stops per canton
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 # group_by mun_CanNr
@@ -426,7 +424,7 @@ ggplot2::ggplot(canton_sf) +
       )
 ```
 
-##Filter by canton: Freiburg
+## Filter by canton: Freiburg
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 # Filter mun_CanNr == 10 
 pts_freiburg<- spjoin_sf %>%
@@ -464,7 +462,7 @@ legend(x=2587000 ,y=1206350,
        )
 ```
 
-##Calculate number of public transportation stops per raster cells
+## Calculate number of public transportation stops per raster cells
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 # We will use the sp package to carry out this analysis because point pattern analysis is still more established for this package. 
 
@@ -557,7 +555,7 @@ plot(st_geometry(mypoint_sf), pch = 19, col="blue", cex =1, add = TRUE)
 plot(st_geometry(pts_sf), pch = 19, col="red", cex =0.5, add = TRUE)
 ```
 
-##Export Data
+## Export Data
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 # shp
 sf::st_write(canton_freiburg_gen, "./Data_out/canton_freiburg_gen.shp", delete_layer = TRUE)
@@ -581,7 +579,7 @@ sf::st_write(canton_freiburg_gen %>% st_transform(4326), path_4326, driver="GeoJ
 raster::writeRaster(rc, filename= "./Data_out/rc.tif", format="GTiff", overwrite=TRUE)
 ```
 
-##Which canton has the longest border?
+## Which canton has the longest border?
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 # Calculate line length
 canton_line_sf <- canton_sf %>%
