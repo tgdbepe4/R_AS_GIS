@@ -26,9 +26,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R_AS_GIS
-## Title: "R_AS_GIS"
-### author: "Katharina Kaelin"
-### date: "2019"
+### Author: Katharina Kaelin
+### Date: 2019
 Die Beispiel wurden vom Statistischen Amt des Kantons Zürich publiziert.
 
 Die Portierung auf die RStudio-Umgebung wurde durch Peter Berger realisiert. Die ganzem Bereitstellung und Dokumentationsteile wurden aus Arbeiten von Timo Grossenbacher von SF Data übrnommen und adapiert.

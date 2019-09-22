@@ -1,12 +1,9 @@
 R\_AS\_GIS
 ----------
 
-Title: “R\_AS\_GIS”
--------------------
+### Author: Katharina Kaelin
 
-### author: “Katharina Kaelin”
-
-### date: “2019”
+### Date: 2019
 
 Die Beispiel wurden vom Statistischen Amt des Kantons Zürich publiziert.
 
@@ -17,7 +14,7 @@ Arbeiten von Timo Grossenbacher von SF Data übrnommen und adapiert.
 Notes
 -----
 
-This report was generated on 2019-09-22 13:42:23. R version: 3.6.1 on
+This report was generated on 2019-09-22 13:46:29. R version: 3.6.1 on
 i386-w64-mingw32. For this report, CRAN packages as of 2019-09-21 were
 used.
 
