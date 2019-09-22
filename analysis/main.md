@@ -14,11 +14,18 @@ Arbeiten von Timo Grossenbacher von SF Data übrnommen und adapiert.
 Notes
 -----
 
-This report was generated on 2019-09-22 13:46:29. R version: 3.6.1 on
-i386-w64-mingw32. For this report, CRAN packages as of 2019-09-21 were
-used.
+This document was produced on Windows 10 with RStudio version 1.2.5001,
+the R “tidytext” package, the software “phantomjs-2.1.1-windows” which
+was placed on the C: drive and with adding the path the the PATH
+environment of Windows 10 and the “MiKTeX 2.9” software on Windows 10.
 
-…
+### R-Script & processed data
+
+I use Timo Grossenbacher’s
+[rddj-template](https://github.com/grssnbchr/rddj-template) as the basis
+for its R scripts. If you have problems executing this script, it may
+help to study the instructions from the
+[rddj-template](https://github.com/grssnbchr/rddj-template).
 
 ### R-Script & data
 
@@ -38,7 +45,23 @@ from <https://github.com/tgdbepe4/R_AS_GIS>.
 
 ### License
 
-…
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span
+xmlns:dct="http://purl.org/dc/terms/"
+href="http://purl.org/dc/dcmitype/Dataset" property="dct:title"
+rel="dct:type">R\_AS\_GIS</span> by
+<a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/tgdbepe4/R_AS_GIS" property="cc:attributionName" rel="cc:attributionURL">SRF
+Data</a> is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+Commons Namensnennung - Attribution ShareAlike 4.0 International
+License</a>.
+
+### Disclaimer
+
+The published information has been carefully compiled, but does not
+claim to be up-to-date, complete or correct. No liability is assumed for
+damages arising from the use of this script or the information drawn
+from it. This also applies to contents of third parties which are
+accessible via this offer. …
 
 ### Data description of output files
 
@@ -180,15 +203,15 @@ Preparations
     ## [25] checkpoint_0.4.7  
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] Rcpp_1.0.1         knitr_1.23         xml2_1.2.2        
+    ##  [1] Rcpp_1.0.2         knitr_1.25         xml2_1.2.2        
     ##  [4] units_0.6-4        hms_0.5.1          rvest_0.3.4       
     ##  [7] tidyselect_0.2.5   viridisLite_0.3.0  xtable_1.8-4      
     ## [10] jsonvalidate_1.1.0 colorspace_1.4-1   lattice_0.20-38   
     ## [13] R6_2.4.0           rlang_0.4.0        rgdal_1.4-4       
-    ## [16] broom_0.5.2        xfun_0.8           e1071_1.7-2       
+    ## [16] broom_0.5.2        xfun_0.9           e1071_1.7-2       
     ## [19] modelr_0.1.5       withr_2.1.2        rgeos_0.5-1       
     ## [22] leafsync_0.1.0     htmltools_0.3.6    class_7.3-15      
-    ## [25] leaflet_2.0.2      assertthat_0.2.1   digest_0.6.19     
+    ## [25] leaflet_2.0.2      assertthat_0.2.1   digest_0.6.20     
     ## [28] httpcode_0.2.0     lifecycle_0.1.0    shiny_1.3.2       
     ## [31] crul_0.8.4         curl_4.0           haven_2.1.1       
     ## [34] compiler_3.6.1     cellranger_1.1.0   pillar_1.4.2      
@@ -288,7 +311,10 @@ Release date: 06-08-2018 Format: csv
     ## 4 8530051      5409 POINT (2572770 1129980)
     ## 5 8501442      6057 POINT (2650331 1141959)
 
-\#\#Municipality The municipality dataset was downloded here:
+Municipality
+------------
+
+The municipality dataset was downloded here:
 <a href="https://shop.swisstopo.admin.ch/de/products/landscape/boundaries3D" class="uri">https://shop.swisstopo.admin.ch/de/products/landscape/boundaries3D</a>
 Release date: 2019 Format: Shapefile
 
@@ -326,6 +352,7 @@ Release date: 2019 Format: Shapefile
     ## [1] "sf"         "tbl_df"     "tbl"        "data.frame"
 
     ## [1] "sf"         "tbl_df"     "tbl"        "data.frame"
+
     mun_sf[1:5,]
 
     ## Simple feature collection with 5 features and 2 fields
@@ -463,8 +490,8 @@ Release date: 2019 Format: Shapefile
               colorNA = "blue")  +
       tmap::tm_layout(frame = FALSE)
 
-![](main_files/figure-markdown_strict/unnamed-chunk-9-1.png)
-\#\#Calculate density of public transportation stops per canton
+![](main_files/figure-markdown_strict/unnamed-chunk-9-1.png) \#\#
+Calculate density of public transportation stops per canton
 
     # group_by mun_CanNr
     canton_sf <- mun_sf %>%
@@ -518,7 +545,8 @@ Release date: 2019 Format: Shapefile
 
 ![](main_files/figure-markdown_strict/unnamed-chunk-10-1.png)
 
-\#\#Filter by canton: Freiburg
+Filter by canton: Freiburg
+--------------------------
 
     # Filter mun_CanNr == 10 
     pts_freiburg<- spjoin_sf %>%
@@ -558,7 +586,8 @@ Release date: 2019 Format: Shapefile
 
 ![](main_files/figure-markdown_strict/unnamed-chunk-12-1.png)
 
-\#\#Calculate number of public transportation stops per raster cells
+Calculate number of public transportation stops per raster cells
+----------------------------------------------------------------
 
     # We will use the sp package to carry out this analysis because point pattern analysis is still more established for this package. 
 
@@ -675,7 +704,8 @@ Release date: 2019 Format: Shapefile
 
 ![](main_files/figure-markdown_strict/unnamed-chunk-15-1.png)
 
-\#\#Export Data
+Export Data
+-----------
 
     # shp
     sf::st_write(canton_freiburg_gen, "./Data_out/canton_freiburg_gen.shp", delete_layer = TRUE)
@@ -714,7 +744,8 @@ Release date: 2019 Format: Shapefile
     # tif
     raster::writeRaster(rc, filename= "./Data_out/rc.tif", format="GTiff", overwrite=TRUE)
 
-\#\#Which canton has the longest border?
+Which canton has the longest border?
+------------------------------------
 
     # Calculate line length
     canton_line_sf <- canton_sf %>%
