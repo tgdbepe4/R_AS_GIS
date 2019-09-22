@@ -3,6 +3,7 @@ title: "R_AS_GIS"
 author: "Katharina Kaelin"
 date: "2019"
 output:
+  md_document: default
   html_document:
     code_folding: show
     echo: TRUE
@@ -15,7 +16,6 @@ output:
     toc_float: 
       collapsed: false
       smooth_scroll: false
-  md_document: default
   word_document:
     toc: yes
     toc_depth: '4'
@@ -54,6 +54,8 @@ if (R_version != paste0(version$major, ".", version$minor)){
 
 This document was produced on Windows 10 with RStudio version 1.2.5001, the R "tidytext" package, the software "phantomjs-2.1.1-windows" which was placed on the C: drive and with adding the path the the PATH environment of Windows 10 and the "MiKTeX 2.9" software on Windows 10.
 
+If the creating to Knit to PDF fails then a file *.tex should occur. Load this file into MiKTeX and run the prozessing serveral times. Each time it fails an additonal package should be installed. Perform this and stop the processing and start again until all run through. Now stat Kint to PDF to produce a PDF output. Now it should work!
+
 ### R-Script & processed data
 
 I use Timo Grossenbacher's [rddj-template](https://github.com/grssnbchr/rddj-template) as the basis for its R scripts. If you have problems executing this script, it may help to study the instructions from the [rddj-template](https://github.com/grssnbchr/rddj-template). 
@@ -66,10 +68,6 @@ The preprocessing and analysis of the data was conducted in the [R project for s
 ### GitHub
 
 The code for the herein described process can also be freely downloaded from [https://github.com/`r user_name`/`r project_name`](https://github.com/`r user_name`/`r project_name`). 
-
-### License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">`r project_name`</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/tgdbepe4/`r project_name`" property="cc:attributionName" rel="cc:attributionURL">SRF Data</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Namensnennung - Attribution ShareAlike 4.0 International License</a>.
-
 
 ### Disclaimer
 

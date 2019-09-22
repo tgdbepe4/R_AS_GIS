@@ -19,6 +19,12 @@ the R “tidytext” package, the software “phantomjs-2.1.1-windows” which
 was placed on the C: drive and with adding the path the the PATH
 environment of Windows 10 and the “MiKTeX 2.9” software on Windows 10.
 
+If the creating to Knit to PDF fails then a file \*.tex should occur.
+Load this file into MiKTeX and run the prozessing serveral times. Each
+time it fails an additonal package should be installed. Perform this and
+stop the processing and start again until all run through. Now stat Kint
+to PDF to produce a PDF output. Now it should work!
+
 ### R-Script & processed data
 
 I use Timo Grossenbacher’s
@@ -42,18 +48,6 @@ document can be generated. In the course of this, data from the folder
 
 The code for the herein described process can also be freely downloaded
 from <https://github.com/tgdbepe4/R_AS_GIS>.
-
-### License
-
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span
-xmlns:dct="http://purl.org/dc/terms/"
-href="http://purl.org/dc/dcmitype/Dataset" property="dct:title"
-rel="dct:type">R\_AS\_GIS</span> by
-<a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/tgdbepe4/R_AS_GIS" property="cc:attributionName" rel="cc:attributionURL">SRF
-Data</a> is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-Commons Namensnennung - Attribution ShareAlike 4.0 International
-License</a>.
 
 ### Disclaimer
 
@@ -178,7 +172,7 @@ Preparations
     sessionInfo()
 
     ## R version 3.6.1 (2019-07-05)
-    ## Platform: i386-w64-mingw32/i386 (32-bit)
+    ## Platform: x86_64-w64-mingw32/x64 (64-bit)
     ## Running under: Windows 10 x64 (build 18362)
     ## 
     ## Matrix products: default
@@ -203,32 +197,32 @@ Preparations
     ## [25] checkpoint_0.4.7  
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] Rcpp_1.0.2         knitr_1.25         xml2_1.2.2        
-    ##  [4] units_0.6-4        hms_0.5.1          rvest_0.3.4       
-    ##  [7] tidyselect_0.2.5   viridisLite_0.3.0  xtable_1.8-4      
-    ## [10] jsonvalidate_1.1.0 colorspace_1.4-1   lattice_0.20-38   
-    ## [13] R6_2.4.0           rlang_0.4.0        rgdal_1.4-4       
-    ## [16] broom_0.5.2        xfun_0.9           e1071_1.7-2       
-    ## [19] modelr_0.1.5       withr_2.1.2        rgeos_0.5-1       
-    ## [22] leafsync_0.1.0     htmltools_0.3.6    class_7.3-15      
-    ## [25] leaflet_2.0.2      assertthat_0.2.1   digest_0.6.20     
-    ## [28] httpcode_0.2.0     lifecycle_0.1.0    shiny_1.3.2       
-    ## [31] crul_0.8.4         curl_4.0           haven_2.1.1       
-    ## [34] compiler_3.6.1     cellranger_1.1.0   pillar_1.4.2      
-    ## [37] backports_1.1.4    generics_0.0.2     stats4_3.6.1      
-    ## [40] geojsonlint_0.3.0  satellite_1.0.1    lubridate_1.7.4   
-    ## [43] httpuv_1.5.2       pkgconfig_2.0.2    rex_1.1.2         
-    ## [46] munsell_0.5.0      httr_1.4.1         tools_3.6.1       
-    ## [49] webshot_0.5.1      dichromat_2.0-0    grid_3.6.1        
-    ## [52] nlme_3.1-140       gtable_0.3.0       png_0.1-7         
-    ## [55] KernSmooth_2.23-15 DBI_1.0.0          cli_1.1.0         
-    ## [58] crosstalk_1.0.0    lazyeval_0.2.2     yaml_2.2.0        
-    ## [61] lwgeom_0.1-7       crayon_1.3.4       later_0.8.0       
-    ## [64] base64enc_0.1-3    tmaptools_2.0-2    htmlwidgets_1.3   
-    ## [67] promises_1.0.1     codetools_0.2-16   vctrs_0.2.0       
-    ## [70] zeallot_0.1.0      mime_0.7           glue_1.3.1        
-    ## [73] evaluate_0.14      V8_2.3             stringi_1.4.3     
-    ## [76] XML_3.98-1.20
+    ##  [1] nlme_3.1-140       satellite_1.0.1    lubridate_1.7.4   
+    ##  [4] webshot_0.5.1      httr_1.4.1         tools_3.6.1       
+    ##  [7] backports_1.1.4    rgdal_1.4-4        R6_2.4.0          
+    ## [10] KernSmooth_2.23-15 rgeos_0.5-1        DBI_1.0.0         
+    ## [13] lazyeval_0.2.2     colorspace_1.4-1   withr_2.1.2       
+    ## [16] tidyselect_0.2.5   leaflet_2.0.2      curl_4.0          
+    ## [19] compiler_3.6.1     cli_1.1.0          rvest_0.3.4       
+    ## [22] xml2_1.2.2         digest_0.6.21      base64enc_0.1-3   
+    ## [25] dichromat_2.0-0    pkgconfig_2.0.2    htmltools_0.3.6   
+    ## [28] jsonvalidate_1.1.0 htmlwidgets_1.3    rlang_0.4.0       
+    ## [31] httpcode_0.2.0     shiny_1.3.2        generics_0.0.2    
+    ## [34] crosstalk_1.0.0    Rcpp_1.0.2         munsell_0.5.0     
+    ## [37] lifecycle_0.1.0    stringi_1.4.3      leafsync_0.1.0    
+    ## [40] yaml_2.2.0         tmaptools_2.0-2    grid_3.6.1        
+    ## [43] promises_1.0.1     crayon_1.3.4       lattice_0.20-38   
+    ## [46] haven_2.1.1        hms_0.5.1          zeallot_0.1.0     
+    ## [49] knitr_1.25         pillar_1.4.2       geojsonlint_0.3.0 
+    ## [52] stats4_3.6.1       codetools_0.2-16   crul_0.8.4        
+    ## [55] XML_3.98-1.20      glue_1.3.1         evaluate_0.14     
+    ## [58] rex_1.1.2          V8_2.3             modelr_0.1.5      
+    ## [61] png_0.1-7          vctrs_0.2.0        httpuv_1.5.2      
+    ## [64] cellranger_1.1.0   gtable_0.3.0       assertthat_0.2.1  
+    ## [67] xfun_0.9           mime_0.7           lwgeom_0.1-7      
+    ## [70] xtable_1.8-4       broom_0.5.2        e1071_1.7-2       
+    ## [73] later_0.8.0        viridisLite_0.3.0  class_7.3-15      
+    ## [76] units_0.6-4
 
 ### Load additional scripts
 
@@ -321,7 +315,7 @@ Release date: 2019 Format: Shapefile
     # Import shp as spatial df
     mun_sf <- sf::st_read("./Data_in/swissBOUNDARIES3D_1_3_TLM_HOHEITSGEBIET.shp", stringsAsFactors = FALSE, crs=2056)
 
-    ## Reading layer `swissBOUNDARIES3D_1_3_TLM_HOHEITSGEBIET' from data source `E:\R_github\R_AS_GIS\analysis\Data_in\swissBOUNDARIES3D_1_3_TLM_HOHEITSGEBIET.shp' using driver `ESRI Shapefile'
+    ## Reading layer `swissBOUNDARIES3D_1_3_TLM_HOHEITSGEBIET' from data source `D:\R_GIT\R_AS_GIS\analysis\Data_in\swissBOUNDARIES3D_1_3_TLM_HOHEITSGEBIET.shp' using driver `ESRI Shapefile'
     ## Simple feature collection with 2361 features and 23 fields
     ## geometry type:  POLYGON
     ## dimension:      XYZ
